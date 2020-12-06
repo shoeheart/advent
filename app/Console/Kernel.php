@@ -66,7 +66,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\Advent\Year2019\Day1Part1::class,
         \App\Console\Commands\Advent\Year2019\Day1Part2::class,
         \App\Console\Commands\Advent\Year2019\Day2Part1::class,
-        //\App\Console\Commands\Advent\Year2019\Day2Part2::class,
+        \App\Console\Commands\Advent\Year2019\Day2Part2::class,
         //\App\Console\Commands\Advent\Year2019\Day3Part1::class,
         //\App\Console\Commands\Advent\Year2019\Day3Part2::class,
         //\App\Console\Commands\Advent\Year2019\Day4Part1::class,
