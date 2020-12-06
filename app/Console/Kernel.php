@@ -20,7 +20,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\Advent\TwentyTwenty\Day3Part1::class,
         \App\Console\Commands\Advent\TwentyTwenty\Day3Part2::class,
         \App\Console\Commands\Advent\TwentyTwenty\Day4Part1::class,
-        //\App\Console\Commands\Advent\TwentyTwenty\Day4Part2::class,
+        \App\Console\Commands\Advent\TwentyTwenty\Day4Part2::class,
         //\App\Console\Commands\Advent\TwentyTwenty\Day5Part1::class,
         //\App\Console\Commands\Advent\TwentyTwenty\Day5Part2::class,
         //\App\Console\Commands\Advent\TwentyTwenty\Day6Part1::class,
