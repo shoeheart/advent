@@ -17,4 +17,21 @@ class AdventBase extends Command {
     return file($inputName, FILE_IGNORE_NEW_LINES);
   }
 
+  protected function _readGroupedInput() {
+    $lines = $this->_readInput();
+
+    $groups = [];
+    $currentGroup = [];
+    foreach ($lines as $line) {
+      if (empty($line)) {
+        $groups[] = $currentGroup;
+        $currentGroup = [];
+      } else {
+        $currentGroup[] = $line;
+      }
+    }
+    $groups[] = $currentGroup;
+
+    return $groups;
+  }
 }
