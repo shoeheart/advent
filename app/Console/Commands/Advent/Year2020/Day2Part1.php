@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace App\Console\Commands\Advent\TwentyTwenty;
+namespace App\Console\Commands\Advent\Year2020;
 
 use App\Console\Commands\Advent\AdventBase;
 
 class Day2Part1 extends AdventBase {
 
-  protected $signature = "day2part1:perform";
+  protected $signature = "year2020:day2part1";
   protected $description = "Advent Of Code 2020 Day 2 Part 1";
 
   public function handle() {
