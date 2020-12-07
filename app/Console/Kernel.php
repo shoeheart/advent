@@ -26,7 +26,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\Advent\Year2020\Day6Part1::class,
         \App\Console\Commands\Advent\Year2020\Day6Part2::class,
         \App\Console\Commands\Advent\Year2020\Day7Part1::class,
-        //\App\Console\Commands\Advent\Year2020\Day7Part2::class,
+        \App\Console\Commands\Advent\Year2020\Day7Part2::class,
         //\App\Console\Commands\Advent\Year2020\Day8Part1::class,
         //\App\Console\Commands\Advent\Year2020\Day8Part2::class,
         //\App\Console\Commands\Advent\Year2020\Day9Part1::class,
