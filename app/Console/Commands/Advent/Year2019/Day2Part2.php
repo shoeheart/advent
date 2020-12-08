@@ -29,7 +29,7 @@ class Day2Part2 extends AdventBase {
         if ($result == 19690720) {
             echo "noun: " . $noun . "\n";
             echo "verb: " . $verb . "\n";
-            echo "answer:" . 100 * $noun + $verb . "\n";
+            echo "answer:" . (100 * $noun + $verb) . "\n";
         }
       }
     }
