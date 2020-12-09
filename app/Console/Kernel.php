@@ -30,7 +30,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\Advent\Year2020\Day8Part1::class,
         \App\Console\Commands\Advent\Year2020\Day8Part2::class,
         \App\Console\Commands\Advent\Year2020\Day9Part1::class,
-        //\App\Console\Commands\Advent\Year2020\Day9Part2::class,
+        \App\Console\Commands\Advent\Year2020\Day9Part2::class,
         //\App\Console\Commands\Advent\Year2020\Day10Part1::class,
         //\App\Console\Commands\Advent\Year2020\Day10Part2::class,
         //\App\Console\Commands\Advent\Year2020\Day11Part1::class,
