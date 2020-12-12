@@ -47,7 +47,7 @@ class Day8Part2 extends AdventBase {
       $direction = $matches[1];
       $amount = $matches[2];
 
-      switch ($op) {
+      switch($op) {
         case 'acc':
           if ($direction == '+') {
             $acc += $amount;
