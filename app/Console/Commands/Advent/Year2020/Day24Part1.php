@@ -64,8 +64,8 @@ class Day24Part1 extends AdventBase {
       } else {
         $tiles[$key] = 'black';
       }
-      print_r($tiles);
-      echo "black tiles: " . count($tiles) . "\n";
     }
+    print_r($tiles);
+    echo "black tiles: " . count($tiles) . "\n";
   }
 }
