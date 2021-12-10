@@ -13,6 +13,10 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
+        \App\Console\Commands\Advent\Year2021\Day10Part2::class,
+        \App\Console\Commands\Advent\Year2021\Day10Part1::class,
+        \App\Console\Commands\Advent\Year2021\Day5Part2::class,
+        \App\Console\Commands\Advent\Year2021\Day5Part1::class,
         \App\Console\Commands\Advent\Year2021\Day4Part2::class,
         \App\Console\Commands\Advent\Year2021\Day4Part1::class,
         \App\Console\Commands\Advent\Year2021\Day3Part2::class,
