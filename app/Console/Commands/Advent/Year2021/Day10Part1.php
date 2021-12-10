@@ -12,7 +12,7 @@ class Day10Part1 extends AdventBase {
   const OPENERS = array(
     '(' => ')',
     '[' => ']',
-    '{' => ')',
+    '{' => '}',
     '<' => '>',
   );
 
@@ -25,17 +25,28 @@ class Day10Part1 extends AdventBase {
 
   public function handle() {
     $lines = $this->_readInput();
+    $score = 0;
     for ($i = 0; $i < count($lines); $i++) {
+      echo "Analyzing line $i: " . $lines[$i] . "\n";
       $stack = new \Ds\Stack();
-      foreach($lines[$i] as $token) {
-        if (in_array($token, self::OPENERS)) {
+      $result = "passed";
+      foreach(str_split($lines[$i]) as $token) {
+        // echo "have $token\n";
+        if (in_array($token, array_keys(self::OPENERS))) {
+          // echo "pushing $token\n";
           $stack->push($token);
-        } else if (self::OPENERS[$stack->peek()] == $token) {
+        } elseif (self::OPENERS[$stack->peek()] == $token) {
+          // echo "popping " . $stack->peek() . "\n";
           $stack->pop();
         } else {
-          echo "Bad token: $token\n";
+          echo "Bad token: $token, score: " . self::CLOSERS[$token] . "\n";
+          $score += self::CLOSERS[$token];
+          $result = "failed";
+          break;
         }
       }
+      echo "Line $result!!!\n";
     }
+    echo "score: $score\n";
   }
 }
