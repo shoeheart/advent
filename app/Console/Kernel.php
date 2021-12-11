@@ -15,6 +15,8 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         \App\Console\Commands\Advent\Year2021\Day10Part2::class,
         \App\Console\Commands\Advent\Year2021\Day10Part1::class,
+        \App\Console\Commands\Advent\Year2021\Day6Part2::class,
+        \App\Console\Commands\Advent\Year2021\Day6Part1::class,
         \App\Console\Commands\Advent\Year2021\Day5Part2::class,
         \App\Console\Commands\Advent\Year2021\Day5Part1::class,
         \App\Console\Commands\Advent\Year2021\Day4Part2::class,

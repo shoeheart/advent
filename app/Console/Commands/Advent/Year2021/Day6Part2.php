@@ -11,14 +11,20 @@ class Day6Part2 extends AdventBase {
 
 
   public function handle() {
-    $lines = $this->_readInput();
-    $boards = array();
-    // $calls = explode(',', $lines[0]);
-    // echo "calls = " . implode(',', $calls) . "\n";
-    $i = 2;
-    while ($i <= (count($lines) - 2)) {
-      for ($j = $i; $j < $i + 5; $j++) {
-      }
+    $fish = explode(',',$this->_readInput()[0]);
+    $fishCounts = array(0, 0, 0, 0, 0, 0, 0, 0, 0);
+    foreach($fish as $f) {
+      $fishCounts[$f]++;
     }
+    echo print_r($fishCounts, true) . "\n";
+    for ($d = 1; $d <= 256; $d++) {
+      $zeroes = array_shift($fishCounts);
+      echo "zeroes: $zeroes\n";
+      echo print_r($fishCounts, true) . "\n";
+      $fishCounts[6] += $zeroes;
+      $fishCounts[] = $zeroes;
+      echo print_r($fishCounts, true) . "\n";
+    }
+    echo array_sum($fishCounts) . "\n";
   }
 }
