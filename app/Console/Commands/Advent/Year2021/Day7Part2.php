@@ -11,14 +11,37 @@ class Day7Part2 extends AdventBase {
 
 
   public function handle() {
-    $lines = $this->_readInput();
-    $boards = array();
-    // $calls = explode(',', $lines[0]);
-    // echo "calls = " . implode(',', $calls) . "\n";
-    $i = 2;
-    while ($i <= (count($lines) - 2)) {
-      for ($j = $i; $j < $i + 5; $j++) {
+    $crabs = explode(',',$this->_readInput()[0]);
+    $crabCounts = [];
+    foreach($crabs as $crab) {
+      if (!isset($crabCounts[$crab])) {
+        $crabCounts[$crab] = 0;
       }
+      $crabCounts[$crab]++;
     }
+    echo print_r($crabCounts, true) . "\n";
+    $minX = min(array_keys($crabCounts));
+    $maxX = max(array_keys($crabCounts));
+
+    /* calculate cost to most all crabs to each position */
+    $costs = [];
+    for ($x = $minX; $x <= $maxX; $x++) {
+      $costs[$x] = 0;
+      // echo "\n\n\n*****  x: $x\n";
+      foreach($crabCounts as $position => $count) {
+        // echo "position: $position\n";
+        // echo "count: $count\n";
+        $distance = abs($position - $x);
+        // echo "distance: $distance\n";
+        for ($d = 1; $d <= $distance; $d++) {
+          // echo "adding: " . $d * $count .  "\n";
+          $costs[$x] += $d * $count;
+          // echo "resulting cost: " . $costs[$x] . "\n";
+        }
+      }
+      // echo print_r($costs, true) . "\n";
+    }
+    $minPosition = array_search(min($costs), $costs);
+    echo "minimum fuel use of " . $costs[$minPosition] . " at position $minPosition\n";
   }
 }
