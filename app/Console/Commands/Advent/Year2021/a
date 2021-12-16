@@ -1,0 +1,70 @@
+ab..... = ..c..f. (1)
+ab..ef. = .bcd.f. (4)
+ab.d... = a.c..f. (7)
+abcdefg = abcdefg (8)
+
+# can create these sub maps from above
+....ef. = .b.d...
+...d... = a......
+
+# then do longest remaining (length 6)
+abcdef. = abc.efg|ab.defg|abcd.fg
+  foreach known in decreasing length, try to subtract
+    ab..ef. = .bcd.f. (4)
+      subtract bcdf, only one match
+        so abcdef. => abcd.fg (9)
+        break;
+    ab.d... = a.c..f. (7)
+    ab..... = ..c..f. (1) 
+
+.bcdefg = abc.efg|ab.defg|abcd.fg
+  foreach known in decreasing length, try to subtract
+    ab..ef. = .bcd.f. (4)
+      subtract bcdf, only one match
+        so abcdef. => abcd.fg (9)
+        break;
+    ab.d... = a.c..f. (7)
+    ab..... = ..c..f. (1) 
+
+
+
+
+
+abcde.g = abc.efg|ab.defg|abcd.fg
+
+# then do remaining (length 5)
+.bcdef. = a.cde.g|a.cd.fg|ab.d.fg
+a.cd.fg = a.cde.g|a.cd.fg
+abcd.f. = a.cde.g|a.cd.fg
+
+
+abc.efg = .bcdefg
+
+.bcdef. = a.cde.g|a.cd.fg|ab.d.fg
+.bcd... = aXc.e.g|aXc..fg|a....fg
+SO
+.bcdef. = ab.d.fg (5)
+
+a.cd.fg = a.cde.g|a.cd.fg
+a.c..fg = ..cde.g|..cd.fg
+indeterminite
+a.cd.fg = a.cde.g (2)
+
+
+abcd.f. = a.cde.g|a.cd.fg
+abc..f. = ..cde.g|..cd.fg
+..c..f. = ...deXg|...d..g
+abcd.f. = a.cd.fg (3)
+
+abcdef. = abc.efg|ab.defg|abcd.fg
+..c.... =        |..X.e.g|......g
+..c.... = ......g
+abcdef. = abcd.fg (9)
+
+.bcdefg = abc.efg|ab.defg|abcd.fg
+......g = ..cXe..|....e..|..c....
+indeterminite
+
+abcde.g = abc.efg|ab.defg|abcd.fg
+..c.e.g = .b..e.g|.bXdeXg|.b.d..g
+....e.g = .b..e..|.bXdeXg|.b.d...
