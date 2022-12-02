@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands\Advent\Year2020;
 
-use App\Console\Commands\Advent\AdventBase;
+use App\Console\AdventBase;
 
 class Day15Part1 extends AdventBase {
 

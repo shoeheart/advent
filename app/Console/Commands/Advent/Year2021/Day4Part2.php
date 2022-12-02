@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands\Advent\Year2021;
 
-use App\Console\Commands\Advent\AdventBase;
+use App\Console\AdventBase;
 
 class BoardPart2 {
   private $_board = array();
