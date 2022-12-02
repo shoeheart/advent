@@ -8,7 +8,7 @@ use App\Console\AdventBase;
 class Day1Part1 extends AdventBase
 {
   protected $signature = 'year2022:day1part1';
-  protected $description = 'Advent of Code Year 2022 Day 1 Part 1';
+  protected $description = 'Advent of Code 2022 Day 1 Part 1';
 
   public function handle() {
     $lines = $this->_readInput();
