@@ -11,7 +11,6 @@ class Day2Part2 extends AdventBase
 
   public function handle() {
     $lines = $this->_readInput();
-    $score = 0;
     $values = [
       'A' => 1,
       'B' => 2,
@@ -52,7 +51,6 @@ class Day2Part2 extends AdventBase
       }
 
       $compare = (($values[$us] + 3 - $values[$them]) % 3);
-      // echo "$compare\n";
       $sum += ($values[$us] + $scores[$compare]);
     }
     echo "$sum\n";

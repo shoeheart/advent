@@ -16,13 +16,9 @@ class Day6Part1 extends AdventBase {
 
     $sum = 0;
     foreach ($groups as $group) {
-      // print_r($group);
-      // echo "\n";
       $yesses = [];
-      foreach($group as $person) {
-        // print_r($person);
-        // echo "\n";
-        foreach(str_split($person) as $answer) {
+      foreach ($group as $person) {
+        foreach (str_split($person) as $answer) {
           if (isset($yesses[$answer])) {
             $yesses[$answer]++;
           } else {
@@ -30,8 +26,6 @@ class Day6Part1 extends AdventBase {
           }
         }
       }
-      // print_r($yesses);
-      // echo "\n";
       $sum += count($yesses);
     }
     echo "sum: " . $sum . "\n";
